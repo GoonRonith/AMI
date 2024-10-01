@@ -26,22 +26,25 @@ int daysInMonth(int month, int year) {
 
 int totalDays(struct Date date) {
     int total = date.year * 365;
-
+    // printf("\n%d=total",total);
+    // printf("\n%d=year",date.year);
 
     for (int i = 0; i < date.year; i++) {
         if (isLeapYear(i)) {
             total++;
         }
     }
+    // printf("\n%d=total",total);
+
 
   
     for (int i = 1; i < date.month; i++) {
         total += daysInMonth(i, date.year);
     }
-
+    // printf("\n%d=total",total);
 
     total += date.day;
-
+    // printf("\n%d=total",total);
     return total;
 }
 
