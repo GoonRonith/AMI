@@ -1,0 +1,3 @@
+ronith,85
+harry,60
+alex,85
