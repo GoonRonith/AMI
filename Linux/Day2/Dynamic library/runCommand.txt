@@ -1,0 +1,5 @@
+gcc -c lib_add.c -fpic
+gcc .\lib_add.o -shared -o lib_calc.so
+ gcc -c main.c -o main.o
+  gcc -o output main.o -L. .\lib_calc.so
+  .\output.exe
