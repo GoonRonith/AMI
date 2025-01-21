@@ -1,0 +1,2 @@
+1.How to create dynamic library using command in linux.
+2.load the dynamic library and use the library function
