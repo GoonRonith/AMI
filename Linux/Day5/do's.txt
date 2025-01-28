@@ -1,0 +1,5 @@
+orphan zombie process
+execv func
+execve func
+file sharing between parent and child
+15 no signal
