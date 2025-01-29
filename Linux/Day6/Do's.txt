@@ -1,0 +1,4 @@
+File locking
+https://www.youtube.com/watch?v=TJzltwv7jJs(Process Kill,background,foreground)
+Threads creation,join,detach,cancel
+Divide main program into multiple threads

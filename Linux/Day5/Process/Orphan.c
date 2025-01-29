@@ -10,14 +10,15 @@ int main() {
         exit(1);
     }
 
-    if (pid > 0) {
-        // Parent process
+    if (pid == 0) {
+        // Child process
+        sleep(15); 
+        printf("Child process (PID: %d) is now orphaned and adopted by init (PPID: %d)\n", getpid(), getppid());
+    } else {
+         // Parent process
+        sleep(6);
         printf("Parent process (PID: %d) is terminating...\n", getpid());
         exit(0);
-    } else {
-        // Child process
-        sleep(5); // Sleep to ensure the parent exits before the child
-        printf("Child process (PID: %d) is now orphaned and adopted by init (PPID: %d)\n", getpid(), getppid());
     }
 
     return 0;
