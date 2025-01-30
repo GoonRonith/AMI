@@ -1,4 +1,35 @@
 File locking
 https://www.youtube.com/watch?v=TJzltwv7jJs(Process Kill,background,foreground)
 Threads creation,join,detach,cancel
-Divide main program into multiple threads
+2 thread 5 thread 10 thread and check whose execution time is less and is better to calculate factorial 
+from 1 to 30 in different sets like 1 to 5 5 to 10 and ...
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/file.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+int main() {
+    int fd = open("example.txt", O_RDWR | O_CREAT, 0000);
+    if (fd == -1) {
+        perror("open");
+        return 1;
+    }
+
+    // Try to lock the file
+    if (flock(fd, LOCK_EX) == -1) {
+        perror("flock");
+        close(fd);
+        return 1;
+    }
+
+    printf("File locked. Press Enter to unlock...\n");
+    getchar();
+
+    // Unlock the file
+    flock(fd, LOCK_UN);
+    close(fd);
+    return 0;
+}

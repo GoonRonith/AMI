@@ -1,0 +1,9 @@
+cp -p example.txt folder2/
+(The -p option preserves file attributes such as timestamps, ownership, and permissions.)
+
+
+wc -w example.txt
+
+-l → Count lines
+-w → Count words
+-c → Count bytes (characters in non-multibyte environments)

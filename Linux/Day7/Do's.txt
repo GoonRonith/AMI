@@ -1,0 +1,7 @@
+There is one global variable which is incrementing from 1 to 100
+you should have two threads
+one thread printing the odd numbers alone
+other thread printing the even numbers alone
+Another important requirement is that the odd number printing thread should print first
+implement it using conditional variable
+printing should be sequential like odd 1,even 2,odd 3,even 4,odd 5,even 6 and so on by two threads
