@@ -15,7 +15,6 @@ int main() {
 
     int newFD=dup2(fd, 11); 
     printf("\nNew Fd->%d",newFD);
-    // printf("\nThis will be written to output.txt\n");
 
     close(fd);
     close(copy_fd);
