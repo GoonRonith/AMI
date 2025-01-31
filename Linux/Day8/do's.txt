@@ -1,0 +1,4 @@
+practice all commands of threads and examples for each of them
+	what is spin lock
+	why should fd be closed
+	fd[1] is write and what will happen if read on fd[1]

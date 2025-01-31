@@ -1,3 +1,4 @@
+#define _GNU_SOURCE
 #include<stdio.h>
 #include<stdlib.h>
 #include<unistd.h>
@@ -10,8 +11,8 @@ static void * ThreadFunc(void *arg){
         sleep(1);
         printf("\n%d",i);
     }
-    // return "Thread1 successfully executed";
-    pthread_exit("Thread1 successfully executed");
+    return "Thread1 successfully executed";
+    // pthread_exit("Thread1 successfully executed");
 }
 
 int main(){
@@ -22,6 +23,8 @@ int main(){
      if (s != 0)
         perror("Thread create error");
 
+    sleep(1);
+    pthread_cancel(t1);
      s = pthread_join(t1,&res);
     if (s != 0)
         perror("pthread_join error");
