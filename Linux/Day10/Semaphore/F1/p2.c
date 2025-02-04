@@ -9,7 +9,7 @@ int main(){
  
     int ret, sval;
     sem_t *sem;
- 
+    sleep(10);
     sem = sem_open("/sem5",  O_RDWR);
  
     if (sem == SEM_FAILED){
@@ -24,7 +24,7 @@ int main(){
  
     ret = sem_wait(sem); //wait state 
     printf("\nProcess 2 executing critical section\n");
-    sleep(10);
+    sleep(2);
     printf("\n ret is (%d)\n",ret);
     printf("\nprocess 2:\n");
     sem_post(sem);

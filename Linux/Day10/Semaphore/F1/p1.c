@@ -15,7 +15,7 @@ int main(){
  
     
  
-    sem = sem_open("/sem5", O_CREAT | O_RDWR, 0660, 2);
+    sem = sem_open("/sem5", O_CREAT | O_RDWR, 0660, 1);
  
     if (sem == SEM_FAILED){
         perror("sem_open fail;");
@@ -33,13 +33,14 @@ int main(){
  
  
     printf("\nprocess 1: Executing Critical section\n");
-    sleep(20);
+    sleep(2);
+    sem_unlink("/sem5");
     sem_post(sem);
     printf("\n critical section executed\n");
     sem_getvalue(sem , &sval );
     printf("\n after  sem_post semaphore value = (%d)\n",sval);
  
-    sem_unlink("/sem5");
+    // sem_unlink("/sem5");
  
  
 }
