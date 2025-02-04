@@ -10,14 +10,14 @@ int main() {
     mqd_t mq;
     struct mq_attr attr;
     
-    // Set message queue attributes
-    attr.mq_flags = 0;
-    attr.mq_maxmsg = 10;
-    attr.mq_msgsize = 256;
-    attr.mq_curmsgs = 0;
-
+//     // Set message queue attributes
+//     attr.mq_flags = 0;
+//     attr.mq_maxmsg = 10;
+//     attr.mq_msgsize = 256;
+//     attr.mq_curmsgs = 0;
+// // 
     // Create or open message queue
-    mq = mq_open(QUEUE_NAME, O_CREAT | O_WRONLY, 0644, &attr);
+    mq = mq_open(QUEUE_NAME, O_CREAT | O_WRONLY, 0644);
     if (mq == (mqd_t)-1) {
         perror("mq_open");
         exit(EXIT_FAILURE);
