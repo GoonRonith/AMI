@@ -1,0 +1,49 @@
+/*Using named binary semaphores*/
+#include <pthread.h>
+#include <semaphore.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <errno.h>
+#include <unistd.h>
+#include <sys/stat.h> 
+#include <fcntl.h>
+#include <semaphore.h> 
+ 
+
+int glob=1;
+sem_t* sem;
+void* func1(void *arg){
+    printf("\nCurrent thread%s",(char *)arg);
+    sem_wait(sem);
+    int loc=glob;
+    printf("\n thread2 reads the current val of glob as %d",loc);
+    loc++;
+    sleep(1);
+    glob=loc;
+    sem_post(sem);
+    printf("\n (t1)glob=%d ",glob);
+}
+
+void* func2(void *arg){
+    printf("\nCurrent thread%s",(char *)arg);
+    sem_wait(sem);
+    int loc=glob;
+    printf("\n thread2 reads the current val of glob as %d",loc);
+    loc--;
+    sleep(1);
+    glob=loc;
+    sem_post(sem);
+    printf("\n (t2)glob=%d ",glob);
+}
+
+int main(){
+    sem=sem_open("/sem1",O_RDWR|O_CREAT,0660,1);
+    pthread_t t1,t2;
+    pthread_create(&t1,NULL,func1,"T1");
+    pthread_create(&t2,NULL,func2,"T2");
+    pthread_join(t1,NULL);
+    pthread_join(t2,NULL);
+    printf("final value of glob=%d\n",glob);
+     sem_unlink("/sem1");
+}

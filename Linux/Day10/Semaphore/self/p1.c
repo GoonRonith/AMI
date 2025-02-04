@@ -13,7 +13,7 @@ int main(){
     unsigned int value;
     sem_t *sem;
     
-    sem = sem_open("/sem1", O_CREAT | O_RDWR, 0660, 0);
+    sem = sem_open("/sem1", O_CREAT | O_RDWR, 0660, 1);
  
     if (sem == SEM_FAILED){
         perror("sem_open fail;");
