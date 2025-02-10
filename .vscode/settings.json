@@ -8,6 +8,7 @@
         "stat.h": "c",
         "fcntl.h": "c",
         "types.h": "c",
-        "racecondpreventusingsemaphore": "cpp"
+        "racecondpreventusingsemaphore": "cpp",
+        "system_error": "c"
     }
 }

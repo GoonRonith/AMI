@@ -1,0 +1,8 @@
+
+Multi-Client Chat Server
+
+Modify the server to handle multiple clients using threads.
+
+
+Broadcast each message received to all connected clients.
+Clients should display messages from both the server and other clients.

@@ -1,0 +1,5 @@
+Simple Client-Server Communication
+Modify the client and server programs to communicate a fixed message (e.g., "Hello, Server!") and receive a response ("Hello, Client!").
+Ensure the server can handle multiple clients but processes them sequentially (no multithreading).
+
+

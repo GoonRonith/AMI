@@ -1,0 +1,11 @@
+socket programming
+
+ip address(ipv4,ipv6)
+switching,circuit switching,packet switching
+tcp and udp
+ping command
+
+
+ndns in networking
+
+https://www.unix.com/unix-for-advanced-and-expert-users/61790-how-create-udp-concurrent-server.html

@@ -1,0 +1,4 @@
+Multiple Message Exchange
+Extend the client and server to support continuous message exchange.
+The client should send multiple messages, and the server should echo them back.
+Implement a termination condition (e.g., the client sending "bye" closes the connection).
